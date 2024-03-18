@@ -13,7 +13,7 @@ const auth = require('./middlewares/auth');
 const app = express();
 const helmet = require("helmet");
 
-mongoose.connect('mongodb+srv://hamlayes:Hamlaoui976*@atlascluster.kepjewx.mongodb.net/gsb-visite?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://anasbenmsatef:XnPU1QX97VWurcAh@cooler.3quoyfz.mongodb.net/?retryWrites=true&w=majority')
   .then(() => console.log('Connexion à MongoDB réussie !'))
   .catch(() => console.log('Connexion à MongoDB échouée !'));
 
