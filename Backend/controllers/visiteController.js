@@ -1,4 +1,6 @@
+const praticien = require('../models/praticien');
 const Visite = require('../models/visite');
+const Visiteur =  require('../models/visiteur');
 
 const expressAsyncHandler = require('express-async-handler');
 
@@ -12,6 +14,14 @@ exports.createVisite = expressAsyncHandler(async (req, res, next) => {
   });
 
   await visite.save();
+
+  await praticien.findByIdAndUpdate(req.body.praticien, {
+    $push: {visite: visite._id}
+  }, {new: true, useFindAndModify: false});
+
+  //await visiteur.findByIdAndUpdate(req.body.visiteur, {
+   // $push: {visite: visite._id}
+  //}, {new: true, useFindAndModify: false})
 
   res.status(201).json({
     message: 'Post saved successfully!'

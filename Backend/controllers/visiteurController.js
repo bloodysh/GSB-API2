@@ -63,3 +63,4 @@ exports.getAllVisiteurs = expressAsyncHandler(async (req, res, next) => {
   const visiteurs = await Visiteur.find();
   res.status(200).json(visiteurs);
 });
+

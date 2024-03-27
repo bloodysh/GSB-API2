@@ -55,6 +55,8 @@ exports.login = asyncHandler(async (req, res, next) => {
     }
     res.status(200).json({
         visiteurId: visiteur._id,
+        nom: visiteur.nom,
+        prenom: visiteur.prenom,
         token: jwt.sign(
             { visiteurId: visiteur._id },
             process.env.JWT_SECRET,
